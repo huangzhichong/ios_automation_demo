@@ -1,0 +1,15 @@
+iphone: 
+  platformName: 'iOS'
+  app:  '/Users/huangsmart/work/MyScripts/WhistlerBlackcomb/WhistlerBlackcomb.app'
+  platformVersion: '8.4'
+  deviceName: 'iPhone 6'
+iphone_plus:
+  platformName: 'iOS'
+  app:  '/Users/huangsmart/work/MyScripts/WhistlerBlackcomb/WhistlerBlackcomb.app'
+  platformVersion: '8.4'
+  deviceName: 'iPhone 6 Plus'
+ipad:
+  platformName: 'iOS'
+  app:  '/Users/huangsmart/work/MyScripts/WhistlerBlackcomb/WhistlerBlackcomb.app'
+  platformVersion: '8.4'
+  deviceName: 'iPad Air'

@@ -1,0 +1,9 @@
+TargetService: EventManagementService##FndWebserverEndurance##EnduranceReportingService##EnduranceManagementService
+plan_name: BVT_BVT_AUI
+owner: smart.huang@activenetwork.com
+status: open
+created_dt: 2013-4-13
+version: 1
+last_modified_dt: 2013-4-23
+timeout: 900
+actions: ios_demo

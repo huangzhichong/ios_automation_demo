@@ -1,0 +1,20 @@
+iphone: 
+  platformName: 'iOS'
+  browserName:  'Safari'
+  platformVersion: '8.3'
+  deviceName: 'iPhone 6'
+iphone_plus:
+  platformName: 'iOS'
+  browserName:  'Safari'
+  platformVersion: '8.3'
+  deviceName: 'iPhone 6 Plus'
+ipad:
+  platformName: 'iOS'
+  browserName:  'Safari'
+  platformVersion: '8.3'
+  deviceName: 'iPad Air'
+android:
+  platformName: "Android"
+  browserName: 'Chrome'
+  platformVersion: '5.0'
+  deviceName: 'Android Emulator'
