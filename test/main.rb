@@ -141,8 +141,8 @@ describe $plan_name  do
   }
   after(:all){
     $service = "#{$service}|#{$script_comments}" unless $script_comments.empty?
-    MARQUEE::update_script_state $round_id,$plan_name,"End",$service
-    $driver.quit if options[:debug] == false
+    MARQUEE::update_script_state $round_id,$plan_name,"End",$service    
+    $driver.quit unless $driver.nil?
     # Common.restore_hosts_file
   }
   before(:each){$errormessage= ""}

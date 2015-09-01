@@ -1,33 +1,52 @@
 def ios_demo
-  it "demo of rtp live pass" do
+
+  it "FRAME001_demo of ios" do
     Common.logger_info"---->>>> load appium config"
     $appium_device_config ||= YAML.load_file("#{File.dirname(__FILE__)}/appium_custom_config.yml")
 
-    WebDriver.start_browser
-    sleep 10
+    WebDriver.restart_browser
+
     Common.logger_info"---->>>>click menu on home view"
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIANavigationBar[1]/UIAButton[1]").click
-    sleep 5
+    HomeView::MenuButton.new.wait_element_present
+    HomeView::MenuButton.new.click
 
     Common.logger_info"---->>>>click login in option in the side menu"
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]").click
-    sleep 5
+    HomeView::LoginItemInSideMenu.new.wait_element_present
+    HomeView::LoginItemInSideMenu.new.click
 
     Common.logger_info"---->>>>click create account on login view"
-    $driver.find_element(:name, "Create Account").click
-    sleep 30
+    CreateAccountView::CreateAccount.new.wait_element_present
+    CreateAccountView::CreateAccount.new.click
 
     Common.logger_info"---->>>>input email and password"
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIATextField[1]").click
-    sleep 3
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIATextField[1]").send_keys "smarttest@test.com"
 
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIASecureTextField[1]").click
-    sleep 5
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIASecureTextField[1]").send_keys "Test123!"
-    sleep 5
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIASecureTextField[2]").click "smarttest@test.com"
-    sleep 5
-    $driver.find_element(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIAScrollView[1]/UIAWebView[1]/UIASecureTextField[2]").send_keys "Test123!"
+    CreateAccountView::EmailInput.new.wait_element_present
+    CreateAccountView::EmailInput.new.input "smarttest@test.com"
+    CreateAccountView::PasswordInput.new.input "Test123!"
+    CreateAccountView::PassowrdConfirmInput.new.input "Test123!"
+    CreateAccountView::EmailPageNextButton.new.click
+    Common.logger_info"---->>>> input first name / middle name/ last name"
+
+    CreateAccountView::FirstNameInput.new.wait_element_present
+    CreateAccountView::FirstNameInput.new.input "Smart"
+    CreateAccountView::MiddleNameInput.new.input "M"
+    CreateAccountView::LastNameInput.new.input "Huang"
+
+    Common.logger_info"---->>>> select gender Male"
+    CreateAccountView::MaleOption.new.click
+
+    CreateAccountView::BirthdayInput.new.input "11/11/1980"
+    CreateAccountView::PhoneNumberInput.new.input "8008700302"    
+    CreateAccountView::UserInfoPageNextButton.new.click
+
+    CreateAccountView::CountrySelectItem.new.wait_element_present
+    CreateAccountView::CountrySelectItem.new.click
+    GeneralKeyboard::GeneralSelectOption.new.wait_element_present
+    GeneralKeyboard::GeneralSelectOption.new.element.send_keys "USA"
+    GeneralKeyboard::DoneButton.new.click
+    GeneralKeyboard::GeneralSelectOption.new.wait_element_disappear
+
+    CreateAccountView::StateSelectItem.new.click
+
   end
 end

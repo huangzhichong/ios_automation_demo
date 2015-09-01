@@ -32,7 +32,7 @@ class ElementBase
     when :normal
       if exist?
         Common.logger_step "Execute - click #{self.class} - success."
-        $driver.execute_script("arguments[0].scrollIntoView(false);", @@element);
+        # $driver.execute_script("arguments[0].scrollIntoView(false);", @@element);
       @@element.click
       else
         Common.logger_error "Execute - click #{self.class} - failed. can't find element by #{@@type} and #{@@value}"

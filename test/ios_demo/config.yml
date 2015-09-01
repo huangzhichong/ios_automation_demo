@@ -1,5 +1,5 @@
 TargetService: EventManagementService##FndWebserverEndurance##EnduranceReportingService##EnduranceManagementService
-plan_name: BVT_BVT_AUI
+plan_name: Framework Test
 owner: smart.huang@activenetwork.com
 status: open
 created_dt: 2013-4-13

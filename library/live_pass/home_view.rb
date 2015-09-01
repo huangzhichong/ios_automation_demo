@@ -1,13 +1,13 @@
-module ActivationPortalMedia
-  class ElementActivationMediaContent < WebElement
+module HomeView
+  class MenuButton < Button
     def initialize
-      WebElement.new("xpath","//form[contains(@action, 'MediaPortal.aspx')]","ElementActivationMediaContent")
+      Button.new(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIANavigationBar[1]/UIAButton[1]")
     end
   end
   
-  class ButtonLookUp < Button
+  class LoginItemInSideMenu < WebElement
     def initialize
-      Button.new("xpath","//input[contains(@name,'cmdLookup')]","ButtonLookUp")
+      WebElement.new(:xpath, "//UIAApplication[1]/UIAWindow[2]/UIATableView[1]/UIATableCell[2]/UIAStaticText[1]")
     end
   end  
   
