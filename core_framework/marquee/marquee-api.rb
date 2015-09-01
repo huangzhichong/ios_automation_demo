@@ -3,7 +3,7 @@ require "uri"
 require "rexml/document"
 
 include REXML
-SCREEN_SHORT_FOLDER = Dir.exist?("c:/marquee/screen_shots") ? "c:/marquee/screen_shots" : "#{File.dirname(__FILE__)}/../../output/screenshots"
+SCREEN_SHORT_FOLDER = "#{ENV['ResultPath']}/screenshots"
 
 module MARQUEE
   def self.post url_string, xml_string
