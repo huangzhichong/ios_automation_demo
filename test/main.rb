@@ -35,8 +35,7 @@ optparse = OptionParser.new do|opts|
   end
   #define environment option
   options[:environment] = 'INT'
-  opts.on('-e', '--environment <string>', ["PINT","INT","NEW","QA","REG", "STG", "PERF", "PROD"]
-  
+  opts.on('-e', '--environment <string>', ["PINT","INT","NEW","QA","REG", "STG", "PERF", "PROD"],
   'Name of the test environment (optinal)','ex -"INT", "STG", "NEW-INT", "NEW-QA", "NEW-STG"','set to INT by default') do|environment|
     options[:environment] = environment
   end
